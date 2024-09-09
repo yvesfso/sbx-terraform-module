@@ -11,7 +11,8 @@ permissions:
 on:
   push:
     branches:
-      - 'main'
+      # - 'main'
+      - 'feature/*'
   # pull_request:
   #   paths:
   #     - 'module/**'

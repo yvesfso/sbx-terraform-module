@@ -28,7 +28,7 @@ No modules.
 | <a name="input_description"></a> [description](#input\_description) | The description of the Machine Learning Workspace. | `string` | `""` | no |
 | <a name="input_display_name"></a> [display\_name](#input\_display\_name) | Friendly name of the deployment | `string` | `""` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment Name | `string` | `""` | no |
-| <a name="input_kv_sku"></a> [kv\_sku](#input\_kv\_sku) | The SKU of the Key Vault to be created. | `string` | `"standard"` | no |
+| <a name="input_kv_sku"></a> [kv\_sku](#input\_kv\_sku) | The SKU of the Key Vault to be created. | `string` | `"premium"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Location of the resources | `string` | `"Brazil South"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the deployment | `string` | n/a | yes |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Name of the resource group in which the resources will be created | `string` | n/a | yes |
