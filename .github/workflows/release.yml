@@ -28,6 +28,9 @@ jobs:
     strategy:
       fail-fast: false
     steps:  
+      - name: Checkout
+        uses: actions/checkout@v4
+      
       - name: Render terraform docs and push changes back to PR
         uses: terraform-docs/gh-actions@v1
         with:
