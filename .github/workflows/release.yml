@@ -23,7 +23,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  release-please-release:
+  update-terraform-docs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -38,6 +38,14 @@ jobs:
           output-file: README.md
           output-method: inject
           git-push: "true"
+  
+  release-please-release:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:  
+      - name: Checkout
+        uses: actions/checkout@v4
  
       - uses: google-github-actions/release-please-action@v3
         id: tag-release
