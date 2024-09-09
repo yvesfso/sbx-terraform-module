@@ -9,37 +9,37 @@ permissions:
 
 # Controls when the workflow will run
 on:
-  # push:
-  #   branches:
-  #     - 'main'
-  pull_request:
-    paths:
-      - 'module/**'
-    types:
-      - closed
+  push:
     branches:
       - 'main'
+  # pull_request:
+  #   paths:
+  #     - 'module/**'
+  #   types:
+  #     - closed
+  #   branches:
+  #     - 'main'  
 
   # Allows you to run this workflow manually from the Actions tab
   # workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # update-terraform-docs:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     fail-fast: false
-  #   steps:  
-  #     - name: Checkout
-  #       uses: actions/checkout@v4
+  update-terraform-docs:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:  
+      - name: Checkout
+        uses: actions/checkout@v4
       
-  #     - name: Render terraform docs and push changes back to PR
-  #       uses: terraform-docs/gh-actions@v1
-  #       with:
-  #         working-dir: './module'
-  #         output-file: README.md
-  #         output-method: inject
-  #         git-push: "true"
+      - name: Render terraform docs and push changes back to PR
+        uses: terraform-docs/gh-actions@v1
+        with:
+          working-dir: './module'
+          output-file: README.md
+          output-method: inject
+          git-push: "true"
   
   release-please:
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         id: tag-release
         with:
-          path: './module'
+          path: 'module/**'
           # changelog-path: CHANGELOG.md
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: terraform-module
