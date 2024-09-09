@@ -51,7 +51,7 @@ jobs:
         with:
           path: './module'
           # changelog-path: CHANGELOG.md
-          # token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           release-type: terraform-module
           # nonrepo-tags: true
           package-name: 'sbx-terraform-module'
