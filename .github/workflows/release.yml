@@ -28,15 +28,15 @@ jobs:
       - name: Render terraform docs and push changes back to PR
         uses: terraform-docs/gh-actions@v1
         with:
+          working-dir: ./
           output-file: README.md
           output-method: inject
-          git-push: true
-          recursive: true
+          git-push: "true"
  
       - uses: google-github-actions/release-please-action@v3
         id: tag-release
         with:
-          path: .
+          path: ./
           changelog-path: CHANGELOG.md
           # token: ${{ secrets.GITHUB_TOKEN }}
           release-type: terraform-module
