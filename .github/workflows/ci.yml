@@ -54,10 +54,10 @@ jobs:
         with:
           # path: './module'
           changlog-path: CHANGELOG.md
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
           release-type: terraform-module
           nonrepo-tags: true
           package-name: 'sbx-terraform-module'
-          # command: github-release
+          command: github-release
       
-      - run: echo "The output is ${{ steps.tag-release.outputs }}"
+      - run: echo "Release created -> ${{ steps.tag-release.release_created }}"
