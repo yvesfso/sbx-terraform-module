@@ -23,6 +23,7 @@ jobs:
           release_branches: main
           tag_prefix: v
           fetch_all_tags: false
+          
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:
@@ -30,7 +31,8 @@ jobs:
           # name: 'sbx-terraform-module'
           name: Release ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
-          prerelease: true      
+          prerelease: true
+
       - uses: google-github-actions/release-please-action@v3
         id: tag-release          
         with:
