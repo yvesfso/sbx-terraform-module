@@ -1,4 +1,10 @@
 name: Bump version
+
+permissions:
+  contents: write
+  pull-requests: write
+  packages: write
+
 on:
   push:
     branches:
