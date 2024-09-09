@@ -11,7 +11,7 @@ resource "azurerm_key_vault" "default" {
   location                 = data.azurerm_resource_group.default.location
   resource_group_name      = data.azurerm_resource_group.default.name
   tenant_id                = var.tenant_id
-  sku_name                 = "premium"
+  sku_name                 = "standard" # "premium"
   purge_protection_enabled = false
   depends_on               = [data.azurerm_resource_group.default]
 }
