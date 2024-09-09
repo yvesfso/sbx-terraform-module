@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/yvesfso/sbx-terraform-module/compare/v1.0.0...v1.0.1) (2024-09-09)
+
+
+### Bug Fixes
+
+* Feature/test pr ([#13](https://github.com/yvesfso/sbx-terraform-module/issues/13)) ([1bac7c5](https://github.com/yvesfso/sbx-terraform-module/commit/1bac7c5948141afaedae9c84a4dad052a98ed3ab))
+
 ## [1.0.0](https://github.com/yvesfso/sbx-terraform-module/compare/v0.1.0...v1.0.0) (2024-09-09)
 
 
