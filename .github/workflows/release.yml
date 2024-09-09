@@ -35,10 +35,12 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         id: tag-release
         with:
-          # path: './module'
+          path: './module'
           changlog-path: CHANGELOG.md
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: terraform-module
           nonrepo-tags: true
           package-name: 'sbx-terraform-module'
           command: github-release
+      
+      - run: echo "The release tag is ${{ steps.tag-release.outputs.tag_name }}"
