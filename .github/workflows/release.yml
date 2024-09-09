@@ -42,3 +42,5 @@ jobs:
           nonrepo-tags: true
           package-name: 'sbx-terraform-module'
           command: github-release
+      
+      - run: echo "The release tag is ${{ steps.tag-release.outputs.tag_name }}"
