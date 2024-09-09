@@ -55,4 +55,4 @@ jobs:
           release-type: terraform-module
           # nonrepo-tags: true
           package-name: 'sbx-terraform-module'
-          # command: github-release
+          command: github-release
