@@ -52,8 +52,8 @@ jobs:
         with:
           path: './module'
           changelog-path: CHANGELOG.md
-          # token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           release-type: terraform-module
           nonrepo-tags: true
-          package-name: 'terraform-ai-services'
+          package-name: 'sbx-terraform-module'
           command: github-release
