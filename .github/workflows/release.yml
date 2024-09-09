@@ -43,4 +43,4 @@ jobs:
           package-name: 'sbx-terraform-module'
           command: github-release
       
-      - run: echo "The release tag is ${{ steps.tag-release.outputs.tag_name }}"
+      - run: echo "Release created ${{ steps.tag-release.outputs.release_created }}"
