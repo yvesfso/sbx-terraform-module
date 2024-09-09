@@ -2,7 +2,7 @@
 resource "azurerm_machine_learning_compute_instance" "default" {
   count                         = var.compute_instance_settings != null ? length(var.team_members) : 0
   name                          = "mlci${var.name}${format("%03s", count.index + 1)}"
-  location                      = data.azurerm_resource_group.default.location
+  # location                      = data.azurerm_resource_group.default.location
   machine_learning_workspace_id = azurerm_machine_learning_workspace.default.id
   virtual_machine_size          = var.compute_instance_settings.vm_size
   authorization_type            = "personal"
