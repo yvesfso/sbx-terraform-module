@@ -19,11 +19,16 @@ jobs:
         uses: mathieudutour/github-tag-action@v6.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_annotated_tag: true
+          release_branches: main
+          tag_prefix: v
+          fetch_all_tags: false
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.tag_version.outputs.new_tag }}
-          name: 'sbx-terraform-module' #Release ${{ steps.tag_version.outputs.new_tag }}
+          # name: 'sbx-terraform-module'
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
           prerelease: true      
       - uses: google-github-actions/release-please-action@v3
