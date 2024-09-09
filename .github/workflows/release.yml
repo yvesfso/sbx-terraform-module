@@ -36,7 +36,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         id: tag-release
         with:
-          path: './terraform/modules/cognitive-services'
+          path: .
           changelog-path: CHANGELOG.md
           # token: ${{ secrets.GITHUB_TOKEN }}
           release-type: terraform-module
