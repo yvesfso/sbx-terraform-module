@@ -49,7 +49,7 @@ variable "tenant_id" {
 variable "kv_sku" {
   description = "The SKU of the Key Vault to be created."
   type        = string
-  default     = "standard"
+  default     = "premium"
   validation {
     condition     = contains(["standard", "premium"], var.kv_sku)
     error_message = "You can only specify one of the following SKUs: standard, premium."
