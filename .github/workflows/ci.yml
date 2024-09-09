@@ -42,7 +42,7 @@ jobs:
           output-method: inject
           git-push: "true"
   
-  release-please:
+  release-pr:
     runs-on: ubuntu-latest
     needs: update-terraform-docs
     steps:  
@@ -53,10 +53,29 @@ jobs:
         id: tag-release
         with:
           # path: './module'
-          changlog-path: CHANGELOG.md
+          changelog-path: CHANGELOG.md
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
           release-type: terraform-module
-          nonrepo-tags: true
+          package-name: 'sbx-terraform-module'
+          monorepo-tags: true
+          command: release-pr
+      
+  release-please-release:
+    runs-on: ubuntu-latest
+    needs: find-release-changes
+    strategy:
+      fail-fast: false
+      matrix:
+        module: ${{fromJson(needs.find-release-changes.outputs.module-paths)}}
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: tag-release
+        with:
+          # path: modules/${{ matrix.module }}
+          changelog-path: CHANGELOG.md
+          token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
+          release-type: terraform-module
+          monorepo-tags: true
           package-name: 'sbx-terraform-module'
           command: github-release
       
