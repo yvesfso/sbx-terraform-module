@@ -13,17 +13,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Bump version and push tag - v1.x
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v6.2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          create_annotated_tag: true
-          release_branches: 1.x
-          tag_prefix: v
-          fetch_all_tags: false
-          dry_run: true
+      # - uses: actions/checkout@v4
+      # - name: Bump version and push tag - v1.x
+      #   id: tag_version
+      #   uses: mathieudutour/github-tag-action@v6.2
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     create_annotated_tag: true
+      #     release_branches: 1.x
+      #     tag_prefix: v
+      #     fetch_all_tags: false
+      #     dry_run: true
           
       # - name: Create a GitHub release
       #   uses: ncipollo/release-action@v1
