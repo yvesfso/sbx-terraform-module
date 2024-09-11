@@ -45,3 +45,4 @@ jobs:
           package-name: 'sbx-terraform-module'
           command: release-pr
           default-branch: 1.x
+          versioning-strategy: service-pack
