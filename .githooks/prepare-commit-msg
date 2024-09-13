@@ -15,4 +15,4 @@ case $branch_name in
         ;;
 esac
 
-sed -i.bak -e "1s/^/$prefix/" $1 
+sed -i.bak -e "1s/^/$prefix/" $1  
