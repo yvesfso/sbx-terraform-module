@@ -5,14 +5,14 @@ branch_name=$(git branch --show-current)
 
 case $branch_name in
     "feature/"*)
-        prefix="feat"
+        prefix="feat:"
         ;;
-    "fix/"*)
-        prefix="fix"
+    "hotfix/"*)
+        prefix="fix:"
         ;;
     *)
-        prefix="chore"
+        prefix="chore:"
         ;;
 esac
 
-sed -i.bak -e "1s/^/$prefix: /" $1
+sed -i.bak -e "1s/^/$prefix /" $1
