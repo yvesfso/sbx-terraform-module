@@ -43,6 +43,7 @@ jobs:
           changlog-path: CHANGELOG.md
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: terraform-module
-          nonrepo-tags: true
+          monorepo-tags: true
           package-name: 'sbx-terraform-module'
           command: release-pr
+          pull-request-title-pattern: 'PR aberto automaticamente'
