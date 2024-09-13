@@ -3,4 +3,4 @@
 # .githooks/commit-msg $1
 
 test -x ".githooks/commit-msg" &&
-        exec ".githooks/commit-msg"
+        exec ".githooks/commit-msg" 
