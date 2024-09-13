@@ -1,12 +1,5 @@
 # Changelog
 
-## [3.1.0](https://github.com/yvesfso/sbx-terraform-module/compare/v3.0.0...v3.1.0) (2024-09-13)
-
-
-### Features
-
-* PR de teste ([37ece4d](https://github.com/yvesfso/sbx-terraform-module/commit/37ece4df758638dd793b83d61174a7d9294640a8))
-
 ## [3.0.0](https://github.com/yvesfso/sbx-terraform-module/compare/v2.0.4...v3.0.0) (2024-09-13)
 
 
