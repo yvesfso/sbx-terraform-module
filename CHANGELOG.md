@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/yvesfso/sbx-terraform-module/compare/v2.0.4...v3.0.0) (2024-09-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* Testing
+
+### Miscellaneous Chores
+
+* ci: ajuste na mensagem de commit ([867ed1d](https://github.com/yvesfso/sbx-terraform-module/commit/867ed1d43130025e29095742e7dfbe05191d250c))
+
 ## [2.0.0](https://github.com/yvesfso/sbx-terraform-module/compare/sbx-terraform-module-v1.0.1...sbx-terraform-module-v2.0.0) (2024-09-09)
 
 
