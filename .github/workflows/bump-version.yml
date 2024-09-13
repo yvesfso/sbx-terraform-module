@@ -36,18 +36,6 @@ jobs:
       #     body: ${{ steps.tag_version.outputs.changelog }}
       #     prerelease: true
 
-      # - uses: google-github-actions/release-please-action@v3
-      #   id: tag-release          
-      #   with:
-      #     # path: './module'
-      #     changlog-path: CHANGELOG.md
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     release-type: terraform-module
-      #     # monorepo-tags: true
-      #     package-name: 'sbx-terraform-module'
-      #     command: release-pr
-      #     pull-request-title-pattern: 'PR aberto automaticamente'
-
       - uses: google-github-actions/release-please-action@v3
         id: tag-release          
         with:
@@ -57,4 +45,16 @@ jobs:
           release-type: terraform-module
           # monorepo-tags: true
           package-name: 'sbx-terraform-module'
-          command: github-release          
+          command: release-pr
+          pull-request-title-pattern: 'PR aberto automaticamente'
+
+      # - uses: google-github-actions/release-please-action@v3
+      #   id: tag-release          
+      #   with:
+      #     # path: './module'
+      #     changlog-path: CHANGELOG.md
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     release-type: terraform-module
+      #     # monorepo-tags: true
+      #     package-name: 'sbx-terraform-module'
+      #     command: github-release          
