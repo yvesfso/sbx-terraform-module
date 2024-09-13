@@ -8,6 +8,9 @@
             "windows": {
                 "command": "git config core.hooksPath .githooks"
             },
+            "osx": {
+                "command": "git config core.hooksPath .githooks"
+            },
             "group": "none",
             "presentation": {
                 "reveal": "always",
