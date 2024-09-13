@@ -1,0 +1,8 @@
+#!/bin/sh
+
+commit_msg=$(cat $1)
+
+if ! echo "$commit_msg" | grep -qE "^(feat|fix|docs|style|refactor|perf|test|chore|build|ci|revert): .{1,50}$"; then
+    echo "Mensagem de commit inválida. Por favor, siga o formato: <tipo>: <breve descrição>"
+    exit 1
+fi
