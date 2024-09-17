@@ -1,0 +1,18 @@
+#!/bin/sh
+# #!/usr/bin/env bash
+ 
+branch_name=$(git branch --show-current)
+
+case $branch_name in
+    "feature/"*)
+        prefix="feat: "
+        ;;
+    "hotfix/"*)
+        prefix="fix: "
+        ;;
+    *)
+        prefix=""
+        ;;
+esac
+
+sed -i.bak -e "1s/^/$prefix/" $1  

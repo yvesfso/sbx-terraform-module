@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start App",
+            "type": "shell",
+            "command": "git config core.hooksPath .githooks",
+            "windows": {
+                "command": "git config core.hooksPath .githooks"
+            },
+            "osx": {
+                "command": "git config core.hooksPath .githooks"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "runOptions": {
+                "runOn": "folderOpen",
+            }
+        }
+    ]
+}
