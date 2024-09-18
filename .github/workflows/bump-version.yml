@@ -9,52 +9,37 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # - name: Bump version and push tag
-      #   id: tag_version
-      #   uses: mathieudutour/github-tag-action@v6.2
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     create_annotated_tag: true
-      #     release_branches: main
-      #     tag_prefix: v
-      #     fetch_all_tags: false
-
-      # - name: Create a GitHub release
-      #   uses: ncipollo/release-action@v1
-      #   with:
-      #     tag: ${{ steps.tag_version.outputs.new_tag }}
-      #     # name: 'sbx-terraform-module'
-      #     name: Release ${{ steps.tag_version.outputs.new_tag }}
-      #     body: ${{ steps.tag_version.outputs.changelog }}
-      #     prerelease: true
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_annotated_tag: true
+          release_branches: main
+          tag_prefix: v
+          fetch_all_tags: false
+          
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          # name: 'sbx-terraform-module'
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}
+          prerelease: true
 
       - uses: google-github-actions/release-please-action@v3
         id: tag-release          
         with:
-          # path: './module'
+          path: './module'
           changlog-path: CHANGELOG.md
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: terraform-module
-          # monorepo-tags: true
+          nonrepo-tags: true
           package-name: 'sbx-terraform-module'
-          command: release-pr
-          pull-request-title-pattern: 'PR aberto automaticamente'
-
-      # - uses: google-github-actions/release-please-action@v3
-      #   id: tag-release          
-      #   with:
-      #     # path: './module'
-      #     changlog-path: CHANGELOG.md
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     release-type: terraform-module
-      #     # monorepo-tags: true
-      #     package-name: 'sbx-terraform-module'
-      #     command: github-release          
+          command: github-release

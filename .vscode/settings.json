@@ -1,5 +1,0 @@
-{
-    "terminal.integrated.automationProfile.windows": "Command Prompt",
-    "terminal.integrated.automationProfile.linux": "bash",
-    "terminal.integrated.automationProfile.osx": "bash"
-}
