@@ -15,4 +15,4 @@ resource "azurerm_key_vault" "default" {
   sku_name                 = var.kv_sku
   purge_protection_enabled = false
   depends_on               = [azurerm_resource_group.default]
-}
+} 
