@@ -44,7 +44,7 @@ jobs:
     permissions:
       contents: none
     runs-on: ubuntu-latest
-    needs: deployDev
+    needs: build
     steps:
       - name: Planning DEV
         run: |
