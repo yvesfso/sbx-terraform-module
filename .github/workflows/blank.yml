@@ -38,6 +38,14 @@ jobs:
     - name: npm install, build, and test
       run: |
         echo running build
+
+    - name: Plan DEV
+      run: |
+        cat "Running dev environment" > $GITHUB_SUMMARY  
+
+    - name: Plan PROD
+      run: |
+        cat "Running prod environment" > $GITHUB_SUMMARY  
     
     # - name: Zip artifact for deployment
     #   run: |
