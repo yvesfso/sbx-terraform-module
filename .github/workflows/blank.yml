@@ -54,7 +54,7 @@ jobs:
     steps:
       - name: Planning DEV
         run: |
-          echo "Planning & testing to dev result" >> $GITHUB_STEP_SUMMARY  
+          echo "Planning & testing to dev result here..." >> $GITHUB_STEP_SUMMARY  
           
   deployDev:
     name: Deploy to Dev
@@ -79,7 +79,7 @@ jobs:
     steps:
       - name: Planning Hom
         run: |
-          echo "Planning & tests to hom result" >> $GITHUB_STEP_SUMMARY  
+          echo "Planning & tests to hom result here..." >> $GITHUB_STEP_SUMMARY  
   
   deployHom:
     name: Deploy to Homologation
@@ -104,7 +104,7 @@ jobs:
     steps:
       - name: Planning PROD
         run: |
-          echo "Planning & tests to prod result" >> $GITHUB_STEP_SUMMARY  
+          echo "Planning & tests to prod result here..." >> $GITHUB_STEP_SUMMARY  
   
   deployProd:
     name: Deploy to Production
@@ -119,3 +119,6 @@ jobs:
       - name: "Deploy to Azure WebApp"
         run: |
           echo Running Production
+      - name: Output Apply
+        run: |
+          echo "Terragrunt apply result here..." >> $GITHUB_STEP_SUMMARY          
