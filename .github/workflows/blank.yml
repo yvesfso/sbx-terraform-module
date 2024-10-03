@@ -2,7 +2,8 @@ name: Build and deploy Angular app to an Azure Web App
 
 on:
   push:
-    tags: v*
+    tags: 
+      - v*
     branches:
       - master
       - v*
