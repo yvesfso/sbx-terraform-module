@@ -1,12 +1,13 @@
 name: Build and deploy Angular app to an Azure Web App
 
-# on:
-#   push:
-#     branches:
-#       - master
 on:
-  release:
-    types: [published]
+  push:
+    tags: v*
+    branches:
+      - master
+# on:
+#   release:
+#     types: [published]
 
   workflow_dispatch:
     inputs:
