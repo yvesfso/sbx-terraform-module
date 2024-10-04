@@ -75,7 +75,8 @@ jobs:
     permissions:
       contents: none
     runs-on: ubuntu-latest
-    needs: deployDev
+    # needs: deployDev
+    needs: build
     steps:
       - name: Planning Hom
         run: |
@@ -100,7 +101,8 @@ jobs:
     permissions:
       contents: none
     runs-on: ubuntu-latest
-    needs: deployHom
+    # needs: deployHom
+    needs: build
     steps:
       - name: Planning PROD
         run: |
